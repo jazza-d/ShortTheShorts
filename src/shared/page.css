@@ -1,0 +1,142 @@
+/* Base styles shared by the extension's own pages (popup and settings). */
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+section {
+  padding: 12px 0;
+  border-top: 1px solid #3f3f3f;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: grid;
+  gap: 6px;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+select,
+input[type='time'] {
+  padding: 8px 10px;
+  border: 1px solid #3f3f3f;
+  border-radius: var(--radius-control);
+  background: #121212;
+  color: var(--text-primary);
+  font: inherit;
+  color-scheme: dark;
+}
+
+select {
+  width: 100%;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+button,
+.button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--radius-control);
+  background: var(--accent);
+  color: #0f0f0f;
+  font: inherit;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover,
+.button:hover {
+  filter: brightness(1.1);
+}
+
+button.secondary,
+.button.secondary {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+button.link {
+  margin-top: 4px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+button.link:hover {
+  background: var(--surface-raised);
+  filter: none;
+}
+
+button.icon {
+  width: auto;
+  padding: 4px 8px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+button.icon:hover {
+  background: var(--surface-raised);
+  filter: none;
+}
+
+button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.support {
+  display: grid;
+  gap: 8px;
+}
+
+.status-active { color: #2ba640; }
+.status-paused { color: var(--text-secondary); }
+.status-auto-off { color: #f2b84b; }
+
+.saved {
+  min-height: 18px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}

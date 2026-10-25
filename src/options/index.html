@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Short the Shorts · Settings</title>
+  </head>
+  <body>
+    <main>
+      <h1>🧠💡 Short the Shorts · Settings</h1>
+
+      <form id="settings">
+        <section id="sites">
+          <h2>Sites</h2>
+          <fieldset id="site-list"></fieldset>
+          <p class="hint">On Instagram, the gate covers the Reels tab and Reel links, not Reels in your home feed or Stories.</p>
+        </section>
+
+        <section id="scope">
+          <h2>Where to gate</h2>
+          <fieldset>
+            <label><input type="radio" name="scope" value="shorts" /> Shorts and Reels only</label>
+            <label><input type="radio" name="scope" value="all" /> All videos (adds regular YouTube videos)</label>
+          </fieldset>
+          <p class="hint">With "All videos", you'll also solve a challenge between regular YouTube videos.</p>
+        </section>
+
+        <section id="auto-off">
+          <h2>Auto-off times</h2>
+          <p class="hint">The gate is always on unless you add times here when it should switch off.</p>
+          <label class="row">
+            <input type="checkbox" name="autoOffEnabled" />
+            Switch off automatically at these times
+          </label>
+
+          <div id="auto-off-fields">
+            <div id="windows"></div>
+            <button type="button" class="secondary" id="add-window">+ Add another time</button>
+            <p class="hint">
+              Same start and end time = the whole day. 17:00 → 09:00 means after 17:00 and before 09:00.
+            </p>
+          </div>
+        </section>
+
+        <button type="submit">Save settings</button>
+        <p class="saved" role="status"></p>
+      </form>
+
+      <section>
+        <h2>Support &amp; share</h2>
+        <p>Short the Shorts is free, forever. If it's helped you, you can buy me a coffee or share it with a friend.</p>
+        <div class="support"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./options.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Short the Shorts</title>
+  </head>
+  <body>
+    <header>
+      <h1>🧠💡 Short the Shorts</h1>
+      <button type="button" class="icon" data-action="open-settings" aria-label="Open settings" title="Settings">⚙️</button>
+    </header>
+
+    <form id="settings">
+      <section id="stats">
+        <h2>Today's summary</h2>
+        <ul class="stats">
+          <li><span id="viewed-label">Shorts viewed</span>: <strong data-stat="videosViewed">0</strong></li>
+          <li>Gates solved: <strong data-stat="gatesSolved">0</strong></li>
+          <li>Time saved (est.): <strong data-stat="minutesSaved">~0 mins</strong></li>
+        </ul>
+      </section>
+
+      <button type="submit">Save settings</button>
+      <p class="saved" role="status"></p>
+      <button type="button" class="link" data-action="open-settings">
+        ⚙️ All settings (auto-off times &amp; more) →
+      </button>
+    </form>
+
+    <footer class="support"></footer>
+
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>
