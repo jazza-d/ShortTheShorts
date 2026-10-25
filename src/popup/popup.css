@@ -17,13 +17,3 @@ header {
   line-height: 1.8;
 }
 
-footer {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #3f3f3f;
-  grid-template-columns: 1fr 1fr;
-}
-
-footer > :only-child {
-  grid-column: span 2;
-}

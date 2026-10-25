@@ -6,6 +6,7 @@ A Chrome extension (Manifest V3) that adds a quick puzzle gate between YouTube S
 
 - UX spec: [`docs/user_design_specification.md`](docs/user_design_specification.md)
 - Tech spec: [`docs/tech_spec.md`](docs/tech_spec.md)
+- Privacy policy: [`PRIVACY.md`](PRIVACY.md)
 
 ## Getting started
 

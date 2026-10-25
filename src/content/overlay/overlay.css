@@ -153,6 +153,41 @@ hr {
   text-align: left;
 }
 
+.support {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.support > :only-child {
+  grid-column: span 2;
+}
+
+.support button,
+.support a {
+  padding: 6px 10px;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.support button:hover,
+.support a:hover {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+}
+
+.support a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-6px); }

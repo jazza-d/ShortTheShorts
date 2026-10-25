@@ -22,7 +22,7 @@ Everything runs locally. There is no backend, no network requests, no analytics,
 - Gate cannot be trivially bypassed by scrolling, arrow keys, or YouTube's autoplay.
 - UI is isolated from YouTube's CSS and survives YouTube DOM re-renders.
 - Small, dependency-free runtime bundle (the content script is about 4 KB gzipped).
-- Always free. Optional support (Buy Me a Coffee / QR) and share links, with no paywall.
+- Always free. Optional support (Ko-fi tip / QR) and share links, with no paywall.
 
 ### Non-goals (for now)
 - Mobile web (`m.youtube.com`), the YouTube/Instagram apps, or non-Chromium browsers.
@@ -64,7 +64,7 @@ Everything runs locally. There is no backend, no network requests, no analytics,
 | :--- | :--- |
 | **Content script** | Detect video views, check scope/auto-off/interval, render overlay, lock playback/scrolling, emit stat events. |
 | **Background service worker** | Serialise stat writes; close the tab on request. Stateless otherwise. |
-| **Popup** | Quick settings (on/off, frequency, challenge, level), today's stats, support/share, ⚙️ / "All settings" link → Settings page. |
+| **Popup** | Quick settings (on/off, frequency, challenge, level), today's stats, ⚙️ / "All settings" link → Settings page. |
 | **Settings page** (`options_ui`) | **Every** setting: the quick settings plus gate scope and auto-off times, and support/share with optional QR. Also opened from the gate's ⚙️. |
 
 ---
@@ -318,7 +318,7 @@ Uses the browser's local time zone. The content script checks it on each new vid
 
 ```ts
 export const LINKS = {
-  support: '',        // e.g. https://buymeacoffee.com/<handle>, Ko-fi, PayPal.me
+  support: 'https://ko-fi.com/jazzad',
   supportQrImage: '', // file in public/, e.g. 'support-qr.png' (SnapScan, Zapper, PayPal QR...)
   share: '',          // override; defaults to the Chrome Web Store listing
 };
@@ -327,7 +327,8 @@ export const LINKS = {
 - **Empty values hide their button**, so the extension can ship before accounts exist.
 - **Share URL** defaults to `https://chromewebstore.google.com/detail/<chrome.runtime.id>`. A store-installed extension's runtime ID *is* its store ID, so this is correct with no configuration once published. (Unpacked/dev installs have a different ID.)
 - **Share action:** `navigator.share()` (native share sheet) when available, otherwise the blurb and URL are copied to the clipboard with a "✓ Link copied" confirmation.
-- **QR** is shown only on the settings page (it's too large for the popup). It's a static image you drop into `public/`, not generated at runtime, so no QR library is needed.
+- **Where:** the tip and share links show on the gate (small, under the escape hatches) and on the settings page. They are not in the popup.
+- **QR** is shown only on the settings page (it's too large for the gate). It's a static image you drop into `public/`, not generated at runtime, so no QR library is needed.
 - Links open via `<a target="_blank" rel="noopener">`. No remote code or tracking pixels.
 
 ### 6.13 Site adapters (`src/sites/`)
@@ -464,7 +465,7 @@ npm run build      # typecheck + production build → dist/
 
 **Icons:** `assets/icon-source.png` (brain + switched-on light bulb) → `scripts/make-icons.py` (Pillow) rounds the corners transparent and writes `public/icons/icon-{16,32,48,128}.png`, which Vite copies to `dist/icons/`. If the 16px toolbar icon reads poorly, consider a simplified variant without the ring.
 
-**Still needed before store submission:** store listing assets (screenshots, 440×280 promo tile), a privacy policy stating no data is collected or transmitted, and the support URL / QR image in `src/shared/links.ts`.
+**Still needed before store submission:** store listing assets (screenshots, 440×280 promo tile), a privacy policy stating no data is collected or transmitted, and (optionally) a support QR image in `src/shared/links.ts`.
 
 ---
 

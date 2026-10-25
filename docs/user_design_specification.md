@@ -77,6 +77,8 @@ The modal renders directly over the active YouTube Shorts container, dimming the
 |   |                                                     |   |
 |   |  [ 🎬 Convert to Standard Video ]                   |   |
 |   |  [ 🚪 Close YouTube Tab ]                           |   |
+|   |                                                     |   |
+|   |     ☕ Give me a tip        🔗 Share with a friend    |   |
 |   +-----------------------------------------------------+   |
 |                                                             |
 +-------------------------------------------------------------+
@@ -93,6 +95,7 @@ The modal renders directly over the active YouTube Shorts container, dimming the
 5. **Escape Hatches (Secondary Actions):**
    - **Convert Button:** Redirects `/shorts/VIDEO_ID` to `youtube.com/watch?v=VIDEO_ID`. Hidden when the gate appears on a regular video. The converted video is not gated again.
    - **Leave Button:** Closes the current browser tab.
+6. **Support & Share:** two small, muted links under the escape hatches: **☕ Give me a tip** (Ko-fi) and **🔗 Share with a friend**. They sit at the point where the user feels the extension working, and stay low-key so they never compete with the challenge.
 
 ---
 
@@ -127,8 +130,6 @@ Accessible when the user clicks the extension icon in the Chrome toolbar.
 |                                                  |
 |  [ Save Settings ]                               |
 |  ⚙️ All settings (auto-off times & more) →       |
-|  ----------------------------------------------  |
-|  [ ☕ Buy me a coffee ] [ 🔗 Share with a friend ]|
 +--------------------------------------------------+
 ```
 
@@ -187,7 +188,7 @@ Opens in a full tab, from the popup's ⚙️ / "All settings" link or the gate's
 |  ----------------------------------------------------  |
 |  SUPPORT & SHARE                                       |
 |  Short the Shorts is free, forever.                    |
-|  [ ☕ Buy me a coffee ]   [ 🔗 Share with a friend ]    |
+|  [ ☕ Give me a tip ]     [ 🔗 Share with a friend ]    |
 |            [ QR code (optional) ]                      |
 +--------------------------------------------------------+
 ```
@@ -198,7 +199,7 @@ Opens in a full tab, from the popup's ⚙️ / "All settings" link or the gate's
   - The status at the top previews the unsaved times live (e.g. flips to AUTO-OFF), so users can check before saving.
 - **Sites:** each supported site can be switched off on its own. On Instagram, the gate covers the Reels tab and Reel links, not Reels in the home feed or Stories. The gate on Instagram has no "Convert" button, and its close button reads "Close Instagram Tab".
 - **Frequency labels** switch between "Shorts/Reels" and "videos" as soon as the scope radio changes.
-- **Support:** the coffee button and QR code only appear once a link/image is configured. The product is always free; support is optional.
+- **Support:** the tip button and QR code only appear once a link/image is configured. The product is always free; support is optional.
 - **Share:** uses the native share sheet where available, otherwise copies a short blurb and the Chrome Web Store link to the clipboard.
 
 ---
@@ -256,7 +257,7 @@ To maintain native feel and visual harmony, the UI matches YouTube Dark Mode aes
 - Settings page: sites, gate scope (Shorts and Reels only / All videos) and auto-off times.
 - Instagram Reels support (Reels tab and Reel links).
 - Local storage session stats (Daily count).
-- Support (Buy Me a Coffee / QR) and Share links.
+- Support (Ko-fi tip / QR) and Share links.
 
 ### Phase 3: Extras (always free)
 - Custom challenge lists.

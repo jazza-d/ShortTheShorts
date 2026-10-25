@@ -1,4 +1,5 @@
 import type { Challenge } from '../../challenges';
+import { renderSupportLinks } from '../../shared/links';
 import themeCss from '../../shared/theme.css?inline';
 import overlayCss from './overlay.css?inline';
 
@@ -42,6 +43,7 @@ const TEMPLATE = `
         <button type="button" data-action="convert">🎬 Convert to Standard Video</button>
         <button type="button" data-action="close">🚪 Close <span class="site-name"></span> Tab</button>
       </div>
+      <div class="support"></div>
     </div>
   </div>
 `;
@@ -63,6 +65,7 @@ export function showOverlay(opts: OverlayOptions): OverlayHandle {
   $<HTMLParagraphElement>('.context').textContent = opts.contextLine;
   $<HTMLSpanElement>('.site-name').textContent = opts.siteName;
   if (!opts.showConvert) $<HTMLButtonElement>('[data-action="convert"]').remove();
+  renderSupportLinks($<HTMLDivElement>('.support'));
 
   let challenge: Challenge;
   let timer: number | undefined;
@@ -126,7 +129,7 @@ export function showOverlay(opts: OverlayOptions): OverlayHandle {
 
   root.addEventListener('keydown', (e) => {
     if (!(e instanceof KeyboardEvent) || e.key !== 'Tab') return;
-    const focusable = [...root.querySelectorAll<HTMLElement>('input, button')].filter(
+    const focusable = [...root.querySelectorAll<HTMLElement>('input, button, a[href]')].filter(
       (el) => !(el as HTMLInputElement | HTMLButtonElement).disabled,
     );
     if (focusable.length === 0) return;

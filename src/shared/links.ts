@@ -4,7 +4,7 @@
  */
 export const LINKS = {
   /** e.g. "https://buymeacoffee.com/your-handle" or a Ko-fi / PayPal.me / Stripe link. */
-  support: '',
+  support: 'https://ko-fi.com/jazzad',
   /** Image file in public/, e.g. "support-qr.png" (SnapScan, Zapper, PayPal QR, etc.). */
   supportQrImage: '',
   /** Overrides the default Chrome Web Store listing URL, e.g. a landing page. */
@@ -45,7 +45,7 @@ export function renderSupportLinks(container: HTMLElement, { showQr = false } = 
       target: '_blank',
       rel: 'noopener',
       className: 'button secondary',
-      textContent: '☕ Buy me a coffee',
+      textContent: '☕ Give me a tip',
     });
     container.append(coffee);
   }

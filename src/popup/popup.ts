@@ -1,7 +1,6 @@
 import '../shared/theme.css';
 import '../shared/page.css';
 import './popup.css';
-import { renderSupportLinks } from '../shared/links';
 import { createQuickSettings } from '../shared/quick-settings';
 import { changedFields, loadSettings, updateSettings } from '../shared/settings';
 import { estimateMinutesSaved, getStats } from '../shared/stats';
@@ -9,7 +8,6 @@ import { estimateMinutesSaved, getStats } from '../shared/stats';
 const form = document.querySelector<HTMLFormElement>('#settings')!;
 
 async function init() {
-  renderSupportLinks(document.querySelector('footer')!);
   document.querySelectorAll('[data-action="open-settings"]').forEach((el) =>
     el.addEventListener('click', () => chrome.runtime.openOptionsPage()),
   );
